@@ -24,7 +24,7 @@ bot.start((ctx) => {
     })
 })
 
-var botLink = 'http://t.me/tts_allbot'
+var botLink = ' @tts_allbot'
 
 bot.action('til', (ctx) =>{
     ctx.reply('Kerakli tilni tanlang \n Выберите нужный язык \n Select the desired language', {
@@ -60,7 +60,7 @@ bot.action('en', (ctx) =>{
             let text = ctx.message.text
             const famaleSpeech = await famale(text)
             ctx.replyWithAudio(famaleSpeech.audio, {
-                caption: text + botLink
+                caption: `${text} \n ${botLink}`
             })
         })
     })
@@ -71,7 +71,7 @@ bot.action('en', (ctx) =>{
             let text = ctx.message.text
             const maleSpeech = await male(text)
             ctx.replyWithAudio(maleSpeech.audio, {
-                caption: text + botLink
+                caption: `${text} \n ${botLink}`
             })
         })
     })
@@ -98,7 +98,7 @@ bot.action('uz', (ctx) =>{
             let text = ctx.message.text
             const ayolSpeech = await ayol(text)
             ctx.replyWithAudio(ayolSpeech.audio, {
-                caption: text + botLink
+                caption: `${text} \n ${botLink}`
             })
         })
     })
@@ -109,7 +109,7 @@ bot.action('uz', (ctx) =>{
             let text = ctx.message.text
             const erkakSpeech = await erkak(text)
             ctx.replyWithAudio(erkakSpeech.audio, {
-                caption: text + botLink
+                caption: `${text} \n ${botLink}`
             })
         })
     })
@@ -136,7 +136,7 @@ bot.action('ru', (ctx) =>{
             let text = ctx.message.text
             const jenisSpeech = await jenis(text)
             ctx.replyWithAudio(jenisSpeech.audio, {
-                caption: text + botLink
+                caption: `${text} \n ${botLink}`
             })
         })
     })
@@ -147,7 +147,7 @@ bot.action('ru', (ctx) =>{
             let text = ctx.message.text
             const mujikSpeech = await mujik(text)
             ctx.replyWithAudio(mujikSpeech.audio, {
-                caption: text + botLink
+                caption: `${text} \n ${botLink}`
             })
         })
     })
@@ -162,7 +162,7 @@ bot.command('/channel', async(ctx) => {
     await ctx.reply(`📢 Channel: @rasulovdev \n https://t.me/general_ITblog`)
 })
 bot.command('/help', async(ctx) => {
-    await ctx.reply(`🤖 <a href="${botLink}">TTS </a> Botdan qanday foydalanish mumkin.
+    await ctx.reply(`🤖 <a href="https://t.me/tts_allbot">TTS </a> Botdan qanday foydalanish mumkin.
     Qanday qilib bo'lim tanlanadi:
      1. Botga start bosgandan so'ng tugmacha orqali tilni tanlashni bosing.
      2. menu tugmachadan o'zingizga kerakli til yoki jinsni tanlang.
@@ -177,6 +177,7 @@ console.log(`Running...`);
 app.get('/', (req, res)=>{
     res.send("Bot is running link: <a href='https://t.me/tts_allbot'>BOT LINK</a>");
 })
+
 const port = process.env.PORT || 3000
 
 app.listen(port, ()=>{console.log(`server is running... on port ${port}`);})
