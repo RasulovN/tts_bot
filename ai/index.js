@@ -175,9 +175,8 @@ bot.launch();
 console.log(`Running...`);
 
 app.get('/', (req, res)=>{
-    res.send("Bot is running link: <a href='https://t.me/>BOT LINK</a>");
+    res.send("Bot is running link: <a href='https://t.me/tts_allbot'>BOT LINK</a>");
 })
-
 const port = process.env.PORT || 3000
 
 app.listen(port, ()=>{console.log(`server is running... on port ${port}`);})
